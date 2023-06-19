@@ -28,8 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL=True
 
-ALLOWED_HOSTS = ['ecommerce-pv0v.onrender.com','127.0.0.1']
-CSRF_TRUSTED_ORIGINS=['https://127.0.0.1','https://ecommerce-pv0v.onrender.com']
+ALLOWED_HOSTS = ['ecommerce-pv0v.onrender.com','127.0.0.1','https://ecommerce-production-aad2.up.railway.app/']
+CSRF_TRUSTED_ORIGINS=['https://127.0.0.1','https://ecommerce-pv0v.onrender.com','ecommerce-production-aad2.up.railway.app/']
 
 
 # Application definition
