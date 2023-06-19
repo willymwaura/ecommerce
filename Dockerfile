@@ -19,7 +19,7 @@ RUN pip install -r requirements.txt
 
 # Make migrations
 RUN pip install gunicorn
-RUN pip install Pillow
+
 
 
 
