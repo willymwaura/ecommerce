@@ -26,10 +26,19 @@ SECRET_KEY = 'z+ksf@)0d^qojbh4rnp4b1to$hq&*tt(3bs$gf(3i267g$k9ln'
 DEBUG = True
 
 #ALLOWED_HOSTS = ['*']
-CORS_ORIGIN_ALLOW_ALL=True
+CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = ['ecommerce-pv0v.onrender.com','127.0.0.1','https://ecommerce-production-aad2.up.railway.app']
-CSRF_TRUSTED_ORIGINS=['https://127.0.0.1','https://ecommerce-pv0v.onrender.com','ecommerce-production-aad2.up.railway.app']
+ALLOWED_HOSTS = [
+    'ecommerce-pv0v.onrender.com',
+    '127.0.0.1',
+    'ecommerce-production-aad2.up.railway.app',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://127.0.0.1',
+    'https://ecommerce-pv0v.onrender.com',
+    'https://ecommerce-production-aad2.up.railway.app',
+]
 
 
 # Application definition
