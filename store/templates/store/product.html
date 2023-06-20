@@ -1,0 +1,162 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+
+<!-- jQuery -->
+<script src="/media/js/jquery-2.0.0.min.js" type="text/javascript"></script>
+
+<!-- Bootstrap4 files-->
+<script src="/media/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<link href="/media/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+
+<!-- Font awesome 5 -->
+<link href="/media/fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
+
+<!-- custom style -->
+<link href="/media/css/ui.css" rel="stylesheet" type="text/css"/>
+<link href="/media/css/responsive.css" rel="stylesheet" />
+
+<!-- custom javascript -->
+<script src="/media/js/script.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+/// some script
+
+// jquery ready start
+$(document).ready(function() {
+	// jQuery code
+
+}); 
+// jquery end
+</script>
+</head>
+<body>
+
+
+<section class="section-content padding-y bg">
+    <div class="container">
+    
+    <!-- ============================ COMPONENT 1 ================================= -->
+    <div class="card">
+        <div class="row no-gutters">
+            <aside class="col-md-6">
+    <article class="gallery-wrap"> 
+    <div class="img-big-wrap">
+      <div> <a href="#"><img src="{{product.imageURL}}"></a></div>
+    </div> <!-- slider-product.// -->
+    <div class="thumbs-wrap">
+        <!--
+      {% for image in product.product_images.all %}
+      <a href="#" class="item-thumb"> <img src="/media/{{image.image}}"></a>
+      
+      {% endfor %}
+        -->
+
+    </div> <!-- slider-nav.// -->
+    </article> <!-- gallery-wrap .end// -->
+            </aside>
+            <main class="col-md-6 border-left">
+    <article class="content-body">
+    
+    <h2 class="title">{{product.name}}</h2>
+    
+    <div class="rating-wrap my-3">
+        <ul class="rating-stars">
+            <li style="width:80%" class="stars-active"> 
+                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                <i class="fa fa-star"></i> 
+            </li>
+            <li>
+                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                <i class="fa fa-star"></i> 
+            </li>
+        </ul>
+        <small class="label-rating text-muted">132 reviews</small>
+        <small class="label-rating text-success"> <i class="fa fa-clipboard-check"></i> 154 orders </small>
+    </div> <!-- rating-wrap.// -->
+    
+    <div class="mb-3"> 
+        <var class="price h4">Kshs{{product.price}}.00</var> 
+        
+    </div> <!-- price-detail-wrap .// -->
+    
+    <!--<p>{{product.desription}}</p>-->
+    <!--
+    
+    
+    <dl class="row">
+      <dt class="col-sm-3">Model#</dt>
+      <dd class="col-sm-9">Odsy-1000</dd>
+    
+      <dt class="col-sm-3">Color</dt>
+      <dd class="col-sm-9">Brown</dd>
+    
+      <dt class="col-sm-3">Delivery</dt>
+      <dd class="col-sm-9">Russia, USA, and Europe </dd>
+    </dl>
+-->
+    
+    <hr>
+    <!--
+    
+        <div class="form-row">
+            
+            <div class="form-group col-md flex-grow-0">
+                <label>Quantity</label>
+                <div class="input-group mb-3 input-spinner">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-light" type="button" id="button-plus"> + </button>
+                  </div>
+                  <input type="text" class="form-control" value="1">
+                  <div class="input-group-append">
+                    <button class="btn btn-light" type="button" id="button-minus"> − </button>
+                  </div>
+                </div>
+            
+            </div> <!-- col.// -->
+    
+            
+            <!--
+            <div class="form-group col-md">
+                
+                    <label>Select size</label>
+                    <div class="mt-1">
+                      {% for size in product.size_variant.all %}
+                      
+                        <label class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" name="select_size" checked="" class="custom-control-input">
+                          <div class="custom-control-label">{{size.size_name}}</div>
+                        </label>
+    
+                      {% endfor %}
+    
+                    </div>
+                
+            </div>
+        -->
+           
+            <!-- col.// -->
+        </div> <!-- row.// -->
+    
+        
+        <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+    </article> <!-- product-info-aside .// -->
+            </main> <!-- col.// -->
+        </div> <!-- row.// -->
+    </div> <!-- card.// -->
+    <!-- ============================ COMPONENT 1 END .// ================================= -->
+    
+
+    </div>
+    </section>
+
+</body>
+</html>

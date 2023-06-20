@@ -15,6 +15,26 @@ def store(request):
 	products = Product.objects.all()
 	context = {'products':products, 'cartItems':cartItems}
 	return render(request, 'store/store.html', context)
+from django.shortcuts import get_object_or_404
+
+def lipa(request):
+	return render(request, 'store/lipa.html')
+
+def product(request, id):
+    data = cartData(request)
+    
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
+    
+    product = get_object_or_404(Product, id=id)
+    
+    context = {
+        'product': product,
+        'cartItems': cartItems
+    }
+    
+    return render(request, 'store/product.html', context)
 
 
 def cart(request):
@@ -90,3 +110,56 @@ def processOrder(request):
 		)
 
 	return JsonResponse('Payment submitted..', safe=False)
+
+from django.shortcuts import render
+ 
+from .mpesa_credentials import LipanaMpesaPpassword , MpesaAccessToken 
+import requests
+from requests.auth import HTTPBasicAuth
+import json
+from django.http import response ,HttpResponse
+
+
+
+# Create your views here.
+
+def lipa_na_mpesa(request):
+               
+        #phone="254112100378"
+        #Amount=1
+        Amount=request.POST['amount']
+        print(Amount)
+        phone=request.POST['number']
+        print(phone)
+        
+        
+        print(phone)
+        access_token = MpesaAccessToken.validated_mpesa_access_token
+        
+
+        api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
+        headers = {"Authorization": "Bearer %s" % access_token}
+        request = {
+            "BusinessShortCode": LipanaMpesaPpassword.Business_short_code,
+            "Password": LipanaMpesaPpassword.decode_password,
+            "Timestamp": LipanaMpesaPpassword.lipa_time,
+            "TransactionType": "CustomerPayBillOnline",
+            "Amount":Amount,
+            "PartyA":phone,
+            "PartyB": LipanaMpesaPpassword.Business_short_code,
+            "PhoneNumber":phone,
+            "CallBackURL": "https://kenyathena.onrender.com/payment/callback",
+            "AccountReference": "JAMII ELECTRONICS ",
+            "TransactionDesc": "Testing stk push"
+        }
+        response = requests.post(api_url, json=request, headers=headers)
+        return HttpResponse("TRANSACTION DONE")
+
+def gettoken(request):
+        consumer_key = 'bdABIHJcBQA5ki4tRYQumvcLA8QaaDP3'
+        consumer_secret = 'QooVaV2gUsBcKziE'
+        api_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
+        r = requests.get(api_URL, auth=HTTPBasicAuth(consumer_key, consumer_secret))
+        mpesa_access_token = json.loads(r.text)
+        validated_mpesa_access_token = mpesa_access_token['access_token']
+        return HttpResponse(validated_mpesa_access_token)

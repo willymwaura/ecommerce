@@ -10,5 +10,8 @@ urlpatterns = [
 
 	path('update_item/', views.updateItem, name="update_item"),
 	path('process_order/', views.processOrder, name="process_order"),
+    path('product/<int:id>/', views.product, name='product'),
+    path('lipa/',views.lipa,name='lipa'),
+    path('mpesa',views.lipa_na_mpesa,name="mpesa"),
 
 ]
