@@ -128,12 +128,16 @@ def lipa_na_mpesa(request):
         #phone="254112100378"
         #Amount=1
         Amount=request.POST['amount']
-        print(Amount)
+		
+        
         phone=request.POST['number']
         print(phone)
-        
+        Amount=int(float(Amount))
+		
+		
         
         print(phone)
+		
         access_token = MpesaAccessToken.validated_mpesa_access_token
         
 
@@ -153,7 +157,7 @@ def lipa_na_mpesa(request):
             "TransactionDesc": "Testing stk push"
         }
         response = requests.post(api_url, json=request, headers=headers)
-        return HttpResponse("TRANSACTION DONE")
+        return HttpResponse("complete the transaction")
 
 def gettoken(request):
         consumer_key = 'bdABIHJcBQA5ki4tRYQumvcLA8QaaDP3'

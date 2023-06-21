@@ -230,6 +230,16 @@ a.ssolink {
   }
 } 
   </style>
+  <script>
+    // Wait for the DOM to load
+    document.addEventListener('DOMContentLoaded', function() {
+      var cartTotal = localStorage.getItem('cartTotal'); // Retrieve the value from localStorage
+  
+      // Update the value of the input field
+      document.getElementById('amountInput').value = cartTotal;
+    });
+  </script>
+  
   <title>Checkout via mpesa</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -286,8 +296,10 @@ a.ssolink {
                   <input type="text" name="number" required>
                 </div>
                 <div class="field padding-bottom--24">
-                  <label for="email">enter amount </label>
-                  <input type="hidden" name="amount" value="10">
+                 
+                  
+
+              <input type="hidden" name="amount" id="amountInput" value="10">
                   
                 </div>
                
@@ -307,5 +319,6 @@ a.ssolink {
     </div>
   </div>
 </body>
+
 
 </html>
