@@ -167,3 +167,6 @@ def gettoken(request):
         mpesa_access_token = json.loads(r.text)
         validated_mpesa_access_token = mpesa_access_token['access_token']
         return HttpResponse(validated_mpesa_access_token)
+
+def homepage(request):
+	return render (request, 'store/homepage.html')

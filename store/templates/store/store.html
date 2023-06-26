@@ -1,4 +1,5 @@
 {% extends 'store/main.html' %}
+
 {% load static %}
 {% block content %}
 	<div class="row">
@@ -18,5 +19,26 @@
 		</div>
 		{% endfor %}
 	</div>
+	<div style="height:30px;">
+	</div>
 
+	<footer>
+		<div class="footer" style="padding: 20px 0; background-color: lightblue;">
+			<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+				<div class="row" style="display: flex; justify-content: center;">
+					<div class="col-md-6" style="width: 50%;">
+						<ul class="sociel" style="text-align: center;">
+							<li style="display: inline-block; margin-right: 10px;"><a href="#"><i class="fa fa-facebook-f" style="color: #000; font-size: 20px;"></i></a></li>
+							<li style="display: inline-block; margin-right: 10px;"><a href="#"><i class="fa fa-twitter" style="color: #000; font-size: 20px;"></i></a></li>
+							<li style="display: inline-block; margin-right: 10px;"><a href="#"><i class="fa fa-instagram" style="color: #000; font-size: 20px;"></i></a></li>
+							<li style="display: inline-block;"><a href="#"><i class="fa fa-instagram" style="color: #000; font-size: 20px;"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="copyright">
+					<p style="margin: 0; text-align: center; color: #777; font-size: 14px;">Copyright 2023 All Right Reserved JAMII ELECTRONICS</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 {% endblock content %}
