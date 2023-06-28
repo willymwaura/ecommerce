@@ -170,3 +170,5 @@ def gettoken(request):
 
 def homepage(request):
 	return render (request, 'store/homepage.html')
+def visa(request):
+	return render (request, 'store/visa.html')

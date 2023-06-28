@@ -13,6 +13,8 @@ urlpatterns = [
     path('product/<int:id>/', views.product, name='product'),
     path('lipa/',views.lipa,name='lipa'),
     path('mpesa',views.lipa_na_mpesa,name="mpesa"),
-    path('',views.homepage,name='homepage')
+    path('',views.homepage,name='homepage'),
+    path('visa',views.visa,name='visa')
+    
 
 ]

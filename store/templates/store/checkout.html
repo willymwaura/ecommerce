@@ -43,7 +43,8 @@
 			<br>
 			<div class="box-element hidden" id="payment-info">
 				<small>Paypal Options</small>
-				<button id="make-payment"><a href="/lipa">Make payment</a></button>
+				<button id="make-payment"><a href="/lipa">Make payment via mpesa</a></button>
+				<button id="make-payment"><a href="/visa">Make payment via debit or credit card</a></button>
 			</div>
 			
 		</div>
@@ -63,7 +64,7 @@
 				</div>
 				{% endfor %}
 				<h5>Items:   {{order.get_cart_items}}</h5>
-				<h5>Total:   ${{order.get_cart_total|floatformat:2}}</h5>
+				<h5>Total:   Kshs{{order.get_cart_total|floatformat:2}}</h5>
 			</div>
 		</div>
 	</div>
