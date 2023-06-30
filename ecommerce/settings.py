@@ -31,13 +31,13 @@ CORS_ORIGIN_ALLOW_ALL = True
 ALLOWED_HOSTS = [
     'ecommerce-pv0v.onrender.com',
     '127.0.0.1',
-    'ecommerce-production-aad2.up.railway.app',
+    'jamii-electronics.up.railway.app',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://127.0.0.1',
     'https://ecommerce-pv0v.onrender.com',
-    'https://ecommerce-production-aad2.up.railway.app',
+    'https://jamii-electronics.up.railway.app',
 ]
 
 
